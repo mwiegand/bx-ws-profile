@@ -1,0 +1,7 @@
+applications:
+- name: hs-mw-profile
+  host: hs-mw-profile
+  memory: 64M
+  instances: 2
+  domain: mybluemix.net
+  buildpack: staticfile_buildpack

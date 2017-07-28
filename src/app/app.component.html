@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<md-toolbar color="primary">
+
+  <span>MyCompany</span>
+  <span class="example-spacer"></span>
+  <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
+
+</md-toolbar>
+
+<md-menu #appMenu="mdMenu">
+  <button md-menu-item> Settings </button>
+  <button md-menu-item> Help </button>
+</md-menu>
+
+<md-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
+
+  <img md-card-image src="{{ data.url }}">
+  <md-card-header>
+    <md-card-title>{{ data.title }}</md-card-title>
+  </md-card-header>
+
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+
+</md-card>
