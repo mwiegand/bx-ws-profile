@@ -1,0 +1,10 @@
+.Fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 78px;
+}
+
+md-input-container {
+  width: 100%
+}

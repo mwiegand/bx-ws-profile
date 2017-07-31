@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { Http } from '@angular/http';
+import {Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/map';
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,16 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  myData: Array<any>;
-
-  constructor(private http: Http) {
-
-    this.http.get('https://jsonplaceholder.typicode.com/photos')
-      .map(response => response.json())
-      .subscribe(res => this.myData = res);
-
+  routeLinks:any[];
+  activeLink = '';
+  constructor(private router: Router) {
+    this.routeLinks = [
+      {label: 'Profile', link: ''},
+      {label: 'Learn', link: 'learn'}];
+    router.events.subscribe((event) => {
+      if(event instanceof NavigationEnd){
+        this.activeLink = this.routeLinks.find(route => event.url === "/"+route.link).link;
+      }
+    });
   }
 }

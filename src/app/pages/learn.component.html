@@ -1,0 +1,73 @@
+<div class="margin" fxLayout="row" fxLayout.xs="column" fxLayout.xs="column">
+
+  <div class="margin" fxFlex.sm="33%" fxFlex.md="20%" fxFlex.lg="16%">
+    <md-card class="Fixed margin">
+      <md-input-container>
+        <input mdInput placeholder="Request">
+      </md-input-container>
+    </md-card>
+  </div>
+
+  <div class="margin" fxFlex fxLayout="column">
+    <div fxFlex *ngFor="let folder of folders">
+      <md-card class="margin">
+        <md-card-header>
+          <md-card-title>Curriculum Vitae</md-card-title>
+          <md-card-subtitle>Lebenslauf</md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+          <md-list fxFlex>
+            <div fxFlex>
+              <h4 md-line>{{folder.name}}</h4>
+            </div>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div fxFlex *ngFor="let folder of folders">
+      <md-card class="margin">
+        <md-card-header>
+          <md-card-title>Curriculum Vitae</md-card-title>
+          <md-card-subtitle>Lebenslauf</md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+          <md-list fxFlex>
+            <div fxFlex>
+              <h4 md-line>{{folder.name}}</h4>
+            </div>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div fxFlex *ngFor="let folder of folders">
+      <md-card class="margin">
+        <md-card-header>
+          <md-card-title>Curriculum Vitae</md-card-title>
+          <md-card-subtitle>Lebenslauf</md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+          <md-list fxFlex>
+            <div fxFlex>
+              <h4 md-line>{{folder.name}}</h4>
+            </div>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div fxFlex *ngFor="let folder of folders">
+      <md-card class="margin">
+        <md-card-header>
+          <md-card-title>Curriculum Vitae</md-card-title>
+          <md-card-subtitle>Lebenslauf</md-card-subtitle>
+        </md-card-header>
+        <md-card-content>
+          <md-list fxFlex>
+            <div fxFlex>
+              <h4 md-line>{{folder.name}}</h4>
+            </div>
+          </md-list>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<!--<data-search></data-search>-->
+<div class="margin" fxLayout="row" fxLayout.xs="column" fxLayout.xs="column">
+
+  <div class="margin" fxFlex.xs="grow" fxFlex.sm="grow" fxFlex.md="33%" fxFlex.lg="20%" fxFlex.xl="16%">
+    <md-card class="fixed poster margin">
+      <img style="max-width:200px;" width="100%" align="center" src="/assets/img/profile.svg">
+      <hr width="80%">
+      <span style="font-style:italic; width: 100%">
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+            </span>
+    </md-card>
+  </div>
+
+  <div class="margin" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="row" fxLayout.lg="row">
+    <md-card fxFlex class="margin">
+      <md-card-header>
+        <md-card-title>Curriculum Vitae</md-card-title>
+        <md-card-subtitle>Lebenslauf</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <md-list fxFlex fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" fxLayout.lg="row">
+          <div fxFlex>
+            <h3 md-subheader>Folders</h3>
+            <md-list-item *ngFor="let folder of folders">
+              <md-icon md-list-icon class="mat-list-icon">folder</md-icon>
+              <h4 md-line>{{folder.name}}</h4>
+              <p md-line class="demo-2"> {{folder.updated}} </p>
+            </md-list-item>
+          </div>
+          <md-divider></md-divider>
+          <div fxFlex>
+            <h3 md-subheader>Notes</h3>
+            <md-list-item *ngFor="let note of notes">
+              <md-icon md-list-icon class="mat-list-icon">note</md-icon>
+              <h4 md-line>{{note.name}}</h4>
+              <p md-line class="demo-2"> {{note.updated}} </p>
+            </md-list-item>
+          </div>
+        </md-list>
+      </md-card-content>
+    </md-card>
+    <md-card fxFlex class="margin">
+      <md-card-header>
+        <md-card-title>Skills</md-card-title>
+        <md-card-subtitle>Kenntnisse</md-card-subtitle>
+      </md-card-header>
+      <md-card-content style="padding: 8px">
+            <span class="skill">
+              <label>
+                PHP
+              </label>
+              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+            </span>
+
+        <span class="skill">
+              <label>
+                C
+              </label>
+              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+            </span>
+        <span class="skill">
+              <label>
+                C
+              </label>
+              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+            </span>
+        <span class="skill">
+              <label>
+                C
+              </label>
+              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+            </span>
+        <span class="skill">
+              <label>
+                C
+              </label>
+              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+            </span>
+        <span class="skill">
+              <label>
+                C
+              </label>
+              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+            </span>
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
