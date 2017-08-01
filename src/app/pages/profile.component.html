@@ -26,7 +26,7 @@
             <md-list-item *ngFor="let folder of folders">
               <md-icon md-list-icon class="mat-list-icon">folder</md-icon>
               <h4 md-line>{{folder.name}}</h4>
-              <p md-line class="demo-2"> {{folder.updated}} </p>
+              <p md-line class="demo-2 text-wrap"> {{folder.updated}} </p>
             </md-list-item>
           </div>
           <md-divider></md-divider>
@@ -35,7 +35,7 @@
             <md-list-item *ngFor="let note of notes">
               <md-icon md-list-icon class="mat-list-icon">note</md-icon>
               <h4 md-line>{{note.name}}</h4>
-              <p md-line class="demo-2"> {{note.updated}} </p>
+              <p md-line class="demo-2 text-wrap"> {{note.updated}} </p>
             </md-list-item>
           </div>
         </md-list>

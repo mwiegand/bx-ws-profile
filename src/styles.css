@@ -29,3 +29,7 @@ md-toolbar * .mat-tab-label, .mat-tab-link {
 .margin {
   margin: 4px;
 }
+
+.text-wrap {
+  white-space: normal !important;
+}
