@@ -1,0 +1,23 @@
+
+.sticky {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  /*background-color: whitesmoke;*/
+}
+.example-spacer {
+  -webkit-box-flex:1;
+  flex-grow:1;
+}
+.mat-toolbar {
+  height: auto;
+  /*background-color: #27ae60;*/
+}
+
+.mat-toolbar .mat-tab-nav-bar {
+  border: none;
+}
+
+.title {
+  margin-right: 16px;
+}

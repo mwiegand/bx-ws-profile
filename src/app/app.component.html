@@ -1,28 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<md-toolbar class="mat-elevation-z6 Fixed" color="primary">
-
-  <span class="title">MW</span>
-  <nav md-tab-nav-bar aria-label="navigation links" color="dark">
-    <a md-tab-link
-       *ngFor="let routeLink of routeLinks"
-       [routerLink]="routeLink.link"
-       [active]="activeLink === routeLink.link"
-       (click)="activeLink= routeLink.link">
-      {{routeLink.label}}
-    </a>
-  </nav>
-  <!--<a md-button routerLink="/" routerLinkActive="active">Profile</a>
-  <a md-button routerLink="/learn" routerLinkActive="active">Learn</a>-->
-  <span class="example-spacer"></span>
-  <button md-button [mdMenuTriggerFor]="appMenu"><md-icon>menu</md-icon> Menu</button>
-
-  <!-- #34a4d7 -->
-</md-toolbar>
-
-<md-menu #appMenu="mdMenu">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
-</md-menu>
+<head-nav></head-nav>
 
 <router-outlet></router-outlet>
 

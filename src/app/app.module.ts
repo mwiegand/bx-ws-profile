@@ -14,6 +14,7 @@ import {ProfileComponent} from "./pages/profile.component";
 import {LearnComponent} from "./pages/learn.component";
 import {DataService} from "./shared/services/data.service";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {HeaderComponent} from "./core/header/header.component";
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
   ],
   declarations: [
     AppComponent,
+    HeaderComponent,
     ProfileComponent,
     LearnComponent,
   ],
