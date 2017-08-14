@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,
-  MdTabsModule, MdSliderModule, MdListModule, MdInputModule
+  MdTabsModule, MdSliderModule, MdListModule, MdInputModule, MdProgressSpinnerModule, MdDialogModule, MdChipsModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -21,6 +21,7 @@ import {HeaderComponent} from "./core/header/header.component";
     BrowserModule,
     FormsModule,
     HttpModule,
+    MdProgressSpinnerModule,
     BrowserAnimationsModule,
     MdButtonModule,
     MdMenuModule,
@@ -33,6 +34,7 @@ import {HeaderComponent} from "./core/header/header.component";
     MdSliderModule,
     AppRoutingModule,
     FlexLayoutModule,
+    MdChipsModule,
   ],
   declarations: [
     AppComponent,

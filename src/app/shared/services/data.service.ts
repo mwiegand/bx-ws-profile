@@ -8,7 +8,8 @@ import { Data } from '../models/data';
 
 @Injectable()
 export class DataService {
-  private dataURL = 'api/data';  // URL to web api
+  // private dataURL = 'https://hs-mw-backend.eu-gb.mybluemix.net/api/query';  // URL to web api
+  private dataURL = 'http://localhost:6006/api/query';  // URL to web api
 
   constructor(private http: Http) { }
 
@@ -48,11 +49,11 @@ export class DataService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Data> {
+  query(queryString: any): Promise<any> {
     return this.http
-      .post(this.dataURL, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.dataURL, JSON.stringify({query:queryString}), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Data)
+      .then(res => res.json().data as any)
       .catch(this.handleError);
   }
 

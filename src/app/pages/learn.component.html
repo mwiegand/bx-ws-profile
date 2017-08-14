@@ -1,71 +1,63 @@
 <div class="margin" style="margin-top:0" fxLayout="row" fxLayout.xs="column" fxLayout.xs="column">
 
-  <div class="margin" fxFlex.sm="33%" fxFlex.md="20%" fxFlex.lg="16%" fxFlex.xl="16%">
+  <div class="margin" fxFlex.sm="33%" fxFlex.md="28%" fxFlex.lg="16%" fxFlex.xl="16%">
     <md-card class="Fixed margin">
       <md-input-container>
-        <input mdInput placeholder="Request">
+        <input mdInput (keyup.enter)="queryData(requestString.value); requestString.value=''" placeholder="Request"
+               #requestString/>
+        <button md-icon-button mdSuffix (click)="queryData(requestString.value); requestString.value=''">
+          <md-icon>send</md-icon>
+        </button>
       </md-input-container>
     </md-card>
   </div>
 
   <div class="margin" fxFlex fxLayout="column">
-    <div fxFlex *ngFor="let folder of folders">
-      <md-card class="margin">
+    <div fxFlex *ngIf="!results.length">
+      <md-card *ngIf="!discoverySpinner" class="margin">
         <md-card-header>
-          <md-card-title>Curriculum Vitae</md-card-title>
-          <md-card-subtitle>Lebenslauf</md-card-subtitle>
+          <md-card-title>Topics you can Ask</md-card-title>
+          <md-card-subtitle>
+            <md-chip-list>
+              <md-chip style="margin: 1px;" *ngFor="let topic of topics">{{topic.key}}</md-chip>
+            </md-chip-list>
+          </md-card-subtitle>
         </md-card-header>
         <md-card-content>
           <md-list fxFlex>
             <div fxFlex>
-              <h4 md-line>{{folder.name}}</h4>
+              <h4>content</h4>
+              <p md-line class=" text-wrap">here will be the results
+                of your query to your Discovery Service...</p>
             </div>
           </md-list>
         </md-card-content>
       </md-card>
+      <md-spinner *ngIf="discoverySpinner"></md-spinner>
     </div>
-    <div fxFlex *ngFor="let folder of folders">
+    <div fxFlex *ngFor="let result of results">
       <md-card class="margin">
         <md-card-header>
-          <md-card-title>Curriculum Vitae</md-card-title>
-          <md-card-subtitle>Lebenslauf</md-card-subtitle>
+          <md-card-title>{{result.extracted_metadata.title}}</md-card-title>
+          <md-card-subtitle>bla</md-card-subtitle>
         </md-card-header>
         <md-card-content>
-          <md-list fxFlex>
-            <div fxFlex>
-              <h4 md-line>{{folder.name}}</h4>
-            </div>
-          </md-list>
-        </md-card-content>
-      </md-card>
-    </div>
-    <div fxFlex *ngFor="let folder of folders">
-      <md-card class="margin">
-        <md-card-header>
-          <md-card-title>Curriculum Vitae</md-card-title>
-          <md-card-subtitle>Lebenslauf</md-card-subtitle>
-        </md-card-header>
-        <md-card-content>
-          <md-list fxFlex>
-            <div fxFlex>
-              <h4 md-line>{{folder.name}}</h4>
-            </div>
-          </md-list>
-        </md-card-content>
-      </md-card>
-    </div>
-    <div fxFlex *ngFor="let folder of folders">
-      <md-card class="margin">
-        <md-card-header>
-          <md-card-title>Curriculum Vitae</md-card-title>
-          <md-card-subtitle>Lebenslauf</md-card-subtitle>
-        </md-card-header>
-        <md-card-content>
-          <md-list fxFlex>
-            <div fxFlex>
-              <h4 md-line>{{folder.name}}</h4>
-            </div>
-          </md-list>
+          <md-tab-group>
+            <md-tab label="Highlights">
+              <md-list fxFlex>
+                <div fxFlex>
+                  <p md-line *ngFor="let highlight of result.highlight.text" class=" text-wrap">... <span
+                    [innerHTML]="highlight"></span> ...</p>
+                </div>
+              </md-list>
+            </md-tab>
+            <md-tab label="Full Document">
+              <md-list fxFlex>
+                <div fxFlex class="document" [innerHTML]="result.html">
+                </div>
+              </md-list>
+            </md-tab>
+          </md-tab-group>
         </md-card-content>
       </md-card>
     </div>

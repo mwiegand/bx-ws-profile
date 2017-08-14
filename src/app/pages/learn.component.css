@@ -8,3 +8,17 @@
 md-input-container {
   width: 100%
 }
+
+em {
+  font-weight: bold !important;
+  font-style: italic;
+}
+md-spinner {
+  margin: auto auto;
+  margin-top: 4em;
+}
+
+.document {
+  overflow-y: auto;
+  max-height: 60vh;
+}

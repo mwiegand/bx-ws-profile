@@ -33,3 +33,13 @@ md-toolbar * .mat-tab-label, .mat-tab-link {
 .text-wrap {
   white-space: normal !important;
 }
+
+.highlight {
+  text-decoration: underline !important;
+  font-style: italic !important;
+}
+
+em {
+  font-style: normal !important;
+  font-weight: bold !important;
+}
