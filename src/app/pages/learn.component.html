@@ -4,12 +4,10 @@
     <md-card class="Fixed margin">
       <md-input-container>
         <!--adds discovery query to frontend code-by-color #AB1A86-->
-        <input mdInput (keyup.enter)="queryData(requestString.value); requestString.value=''" placeholder="Request"
-               #requestString/>
-        <button md-icon-button mdSuffix (click)="queryData(requestString.value); requestString.value=''">
+        <input mdInput placeholder="Request" #requestString/>
+        <button md-icon-button mdSuffix >
           <md-icon>send</md-icon>
         </button>
-        <!--adds discovery query to frontend code-by-color #AB1A86-->
       </md-input-container>
     </md-card>
   </div>
@@ -19,13 +17,7 @@
       <md-card *ngIf="!discoverySpinner" class="margin">
         <md-card-header>
           <md-card-title><strong>Topics you can Ask</strong></md-card-title>
-          <!--adds data-topics code-by-colors #3B0256-->
-          <md-card-subtitle>
-            <md-chip-list>
-              <md-chip style="margin: 1px;" *ngFor="let topic of topics">{{topic.key}}</md-chip>
-            </md-chip-list>
-          </md-card-subtitle>
-          <!--adds data-topics code-by-colors #3B0256-->
+          <!--adds data-topics code-by-color #3B0256-->
         </md-card-header>
         <md-card-content>
           <md-list fxFlex>
@@ -38,39 +30,5 @@
       <md-spinner *ngIf="discoverySpinner"></md-spinner>
     </div>
     <!--adds discovery query to frontend code-by-color #AB1A86-->
-    <div fxFlex *ngFor="let result of results">
-      <md-card class="margin">
-        <md-card-header>
-          <md-card-title><strong>{{result.extracted_metadata.title}}</strong></md-card-title>
-          <md-card-subtitle>
-            <md-card-subtitle *ngIf="result.highlight['enriched_text.categories.label']">
-              <md-chip-list>
-                <md-chip style="margin: 1px;"
-                         *ngFor="let topic of result.highlight['enriched_text.categories.label']"
-                         [innerHTML]="topic"></md-chip>
-              </md-chip-list>
-            </md-card-subtitle>
-          </md-card-subtitle>
-        </md-card-header>
-        <md-card-content>
-          <md-tab-group>
-            <md-tab label="Highlights">
-              <md-list fxFlex>
-                <div fxFlex>
-                  <p md-line *ngFor="let highlight of result.highlight.text" class=" text-wrap">
-                    ... <span [innerHTML]="highlight"></span> ...
-                  </p>
-                </div>
-              </md-list>
-            </md-tab>
-            <md-tab label="Full Document">
-              <md-list fxFlex>
-                <div fxFlex class="document" [innerHTML]="result.html"></div>
-              </md-list>
-            </md-tab>
-          </md-tab-group>
-        </md-card-content>
-      </md-card>
-    </div>
   </div>
 </div>

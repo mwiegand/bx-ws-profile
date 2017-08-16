@@ -4,8 +4,9 @@
     <md-card class="fixed poster margin">
       <!--inserts own profile picture code-by-color #1A1862-->
       <img class="profile" width="100%" align="center" src="/assets/img/profile_pic.jpg">
-      <md-divider></md-divider>
       <!--adds profile description code-by-color #0F0842-->
+      <p><strong>Shiba Inu</strong></p>
+      <md-divider></md-divider>
       <p><i>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
@@ -26,46 +27,15 @@
           <div fxFlex>
             <h3 md-subheader>Education</h3>
             <!--adds education code-by-color #140956-->
-            <md-list-item *ngFor="let school of schools">
-              <md-icon md-list-icon class="mat-list-icon">school</md-icon>
-              <h4 md-line>{{school.name}}</h4>
-              <p md-line class="text-wrap"> {{school.start | date:'MM/yyyy'}} - {{school.end | date:'MM/yyyy'}}</p>
-            </md-list-item>
           </div>
           <md-divider style="margin-top: 1em"></md-divider>
           <div fxFlex>
             <h3 md-subheader>Work</h3>
             <!--adds jobs code-by-color #362F9F-->
-            <md-list-item *ngFor="let job of works">
-              <md-icon md-list-icon class="mat-list-icon">work</md-icon>
-              <h4 md-line>{{job.name}}</h4>
-              <i md-line class="text-wrap">{{job.role}}</i>
-              <p md-line class="text-wrap"> {{job.start | date:'MM/yyyy'}} - {{job.end | date:'MM/yyyy'}} </p>
-            </md-list-item>
           </div>
         </md-list>
       </md-card-content>
     </md-card>
     <!--adds skills code-by-color #1BA3FF-->
-    <md-card fxFlex="100%" class="margin">
-      <md-card-header>
-        <div md-card-avatar class="star-header"></div>
-        <md-card-title>Skills</md-card-title>
-        <md-card-subtitle>Kenntnisse</md-card-subtitle>
-      </md-card-header>
-      <md-card-content>
-            <span class="skill" *ngFor="let skill of skills" fxLayout="row" fxLayoutAlign="space-between center">
-              <label>
-                {{skill.name}}
-              </label>
-              <md-input-container class="margin">
-                <input mdInput align="right" type="number" style="text-align: right;" disabled value="{{skill.score}}">
-              </md-input-container>
-              <md-slider min="1" max="5" step="0.1" onTouched="" change="" color="primary" value="{{skill.score}}"
-                         thumbLabel tickInterval="0.1" mdTooltipPosition="before" mdTooltip="{{skill.score}}" disabled="">
-              </md-slider>
-            </span>
-      </md-card-content>
-    </md-card>
   </div>
 </div>
