@@ -3,86 +3,64 @@
 
   <div class="margin" fxFlex.xs="grow" fxFlex.sm="grow" fxFlex.md="33%" fxFlex.lg="20%" fxFlex.xl="16%">
     <md-card class="fixed poster margin">
-      <img style="max-width:200px;" width="100%" align="center" src="/assets/img/profile.svg">
+      <img class="profile" width="100%" align="center" src="/assets/img/profile_pic.jpg">
       <md-divider></md-divider>
-      <p style="font-style:italic; width: 100%">
-              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-            </p>
+      <p style="width: 100%"><i>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </i>
+      </p>
     </md-card>
   </div>
 
-  <div class="margin" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="row" fxLayout.lg="row">
-    <md-card fxFlex class="margin">
+  <div class="margin" fxFlex="grow" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="row" fxLayout.lg="row">
+    <md-card fxFlex="100%" class="margin">
       <md-card-header>
+        <div md-card-avatar class="cv-header"></div>
         <md-card-title>Curriculum Vitae</md-card-title>
         <md-card-subtitle>Lebenslauf</md-card-subtitle>
       </md-card-header>
       <md-card-content>
         <md-list fxFlex fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" fxLayout.lg="row">
           <div fxFlex>
-            <h3 md-subheader>Folders</h3>
-            <md-list-item *ngFor="let folder of folders">
-              <md-icon md-list-icon class="mat-list-icon">folder</md-icon>
-              <h4 md-line>{{folder.name}}</h4>
-              <p md-line class="demo-2 text-wrap"> {{folder.updated}} </p>
+            <h3 md-subheader>Education</h3>
+            <md-list-item *ngFor="let school of schools">
+              <md-icon md-list-icon class="mat-list-icon">school</md-icon>
+              <h4 md-line>{{school.name}}</h4>
+              <p md-line class="text-wrap"> {{school.start | date:'MM/yyyy'}} - {{school.end | date:'MM/yyyy'}}</p>
             </md-list-item>
           </div>
-          <md-divider></md-divider>
+          <md-divider style="margin-top: 1em"></md-divider>
           <div fxFlex>
-            <h3 md-subheader>Notes</h3>
-            <md-list-item *ngFor="let note of notes">
-              <md-icon md-list-icon class="mat-list-icon">note</md-icon>
-              <h4 md-line>{{note.name}}</h4>
-              <p md-line class="demo-2 text-wrap"> {{note.updated}} </p>
+            <h3 md-subheader>Work</h3>
+            <md-list-item *ngFor="let job of works">
+              <md-icon md-list-icon class="mat-list-icon">work</md-icon>
+              <h4 md-line>{{job.name}}</h4>
+              <i md-line class="text-wrap">{{job.role}}</i>
+              <p md-line class="text-wrap"> {{job.start | date:'MM/yyyy'}} - {{job.end | date:'MM/yyyy'}} </p>
             </md-list-item>
           </div>
         </md-list>
       </md-card-content>
     </md-card>
-    <md-card fxFlex class="margin">
+    <md-card fxFlex="100%" class="margin">
       <md-card-header>
+        <div md-card-avatar class="star-header"></div>
         <md-card-title>Skills</md-card-title>
         <md-card-subtitle>Kenntnisse</md-card-subtitle>
       </md-card-header>
-      <md-card-content style="padding: 8px">
-            <span class="skill">
+      <md-card-content>
+            <span class="skill" *ngFor="let skill of skills" fxLayout="row" fxLayoutAlign="space-between center">
               <label>
-                PHP
+                {{skill.name}}
               </label>
-              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
-            </span>
-
-        <span class="skill">
-              <label>
-                C
-              </label>
-              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
-            </span>
-        <span class="skill">
-              <label>
-                C
-              </label>
-              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
-            </span>
-        <span class="skill">
-              <label>
-                C
-              </label>
-              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
-            </span>
-        <span class="skill">
-              <label>
-                C
-              </label>
-              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
-            </span>
-        <span class="skill">
-              <label>
-                C
-              </label>
-              <md-slider min="1" max="5" step="0.1" value="1.5" thumbLabel tickInterval="0.1" invert></md-slider>
+              <md-input-container class="margin">
+                <input mdInput align="right" type="number" style="text-align: right;" disabled value="{{skill.score}}">
+              </md-input-container>
+              <md-slider min="1" max="5" step="0.1" onTouched="" change="" color="primary" value="{{skill.score}}"
+                         thumbLabel tickInterval="0.1" mdTooltipPosition="before" mdTooltip="{{skill.score}}" disabled="">
+              </md-slider>
             </span>
       </md-card-content>
     </md-card>

@@ -3,8 +3,9 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,
-  MdTabsModule, MdSliderModule, MdListModule, MdInputModule, MdProgressSpinnerModule, MdDialogModule, MdChipsModule
+  MdTabsModule, MdSliderModule, MdListModule, MdInputModule, MdProgressSpinnerModule, MdChipsModule, MdTooltipModule
 } from '@angular/material';
+import 'hammerjs';
 
 import {AppComponent} from './app.component';
 import {HttpModule} from "@angular/http";
@@ -35,6 +36,7 @@ import {HeaderComponent} from "./core/header/header.component";
     AppRoutingModule,
     FlexLayoutModule,
     MdChipsModule,
+    MdTooltipModule,
   ],
   declarations: [
     AppComponent,

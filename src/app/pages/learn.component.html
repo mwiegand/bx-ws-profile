@@ -16,7 +16,7 @@
     <div fxFlex *ngIf="!results.length">
       <md-card *ngIf="!discoverySpinner" class="margin">
         <md-card-header>
-          <md-card-title>Topics you can Ask</md-card-title>
+          <md-card-title><strong>Topics you can Ask</strong></md-card-title>
           <md-card-subtitle>
             <md-chip-list>
               <md-chip style="margin: 1px;" *ngFor="let topic of topics">{{topic.key}}</md-chip>
@@ -26,7 +26,6 @@
         <md-card-content>
           <md-list fxFlex>
             <div fxFlex>
-              <h4>content</h4>
               <p md-line class=" text-wrap">here will be the results
                 of your query to your Discovery Service...</p>
             </div>
@@ -38,8 +37,14 @@
     <div fxFlex *ngFor="let result of results">
       <md-card class="margin">
         <md-card-header>
-          <md-card-title>{{result.extracted_metadata.title}}</md-card-title>
-          <md-card-subtitle>bla</md-card-subtitle>
+          <md-card-title><strong>{{result.extracted_metadata.title}}</strong></md-card-title>
+          <md-card-subtitle>
+            <md-card-subtitle *ngIf="result.highlight['enriched_text.categories.label']">
+              <md-chip-list>
+                <md-chip style="margin: 1px;" *ngFor="let topic of result.highlight['enriched_text.categories.label']" [innerHTML]="topic"></md-chip>
+              </md-chip-list>
+            </md-card-subtitle>
+          </md-card-subtitle>
         </md-card-header>
         <md-card-content>
           <md-tab-group>
