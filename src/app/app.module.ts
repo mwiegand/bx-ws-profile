@@ -14,9 +14,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {HeaderComponent} from "./core/header/header.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {ProfileComponent} from "./pages/profile.component";
-/*init LearnComponent code-by-colors #28003E*/
 import {LearnComponent} from "./pages/learn.component";
-/*init DataService code-by-colors #7F1C7D*/
 import {DataService} from "./shared/services/data.service";
 
 @NgModule({
@@ -44,10 +42,8 @@ import {DataService} from "./shared/services/data.service";
     AppComponent,
     HeaderComponent,
     ProfileComponent,
-    /*init LearnComponent code-by-colors #28003E 28003E*/
     LearnComponent,
   ],
-  /*init DataService code-by-colors #7F1C7D*/
   providers: [DataService],
   bootstrap: [AppComponent]
 })
