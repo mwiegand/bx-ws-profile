@@ -1,16 +1,16 @@
-<!--<data-search></data-search>-->
 <div class="margin" style="margin-top:0" fxLayout="row" fxLayout.xs="column" fxLayout.xs="column">
 
   <div class="margin" fxFlex.xs="grow" fxFlex.sm="grow" fxFlex.md="33%" fxFlex.lg="20%" fxFlex.xl="16%">
     <md-card class="fixed poster margin">
+      <!--inserts own profile picture code-by-color #1A1862-->
       <img class="profile" width="100%" align="center" src="/assets/img/profile_pic.jpg">
       <md-divider></md-divider>
-      <p style="width: 100%"><i>
+      <!--adds profile description code-by-color #0F0842-->
+      <p><i>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.
-      </i>
-      </p>
+      </i></p>
     </md-card>
   </div>
 
@@ -25,6 +25,7 @@
         <md-list fxFlex fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" fxLayout.lg="row">
           <div fxFlex>
             <h3 md-subheader>Education</h3>
+            <!--adds education code-by-color #140956-->
             <md-list-item *ngFor="let school of schools">
               <md-icon md-list-icon class="mat-list-icon">school</md-icon>
               <h4 md-line>{{school.name}}</h4>
@@ -34,6 +35,7 @@
           <md-divider style="margin-top: 1em"></md-divider>
           <div fxFlex>
             <h3 md-subheader>Work</h3>
+            <!--adds jobs code-by-color #362F9F-->
             <md-list-item *ngFor="let job of works">
               <md-icon md-list-icon class="mat-list-icon">work</md-icon>
               <h4 md-line>{{job.name}}</h4>
@@ -44,6 +46,7 @@
         </md-list>
       </md-card-content>
     </md-card>
+    <!--adds skills code-by-color #1BA3FF-->
     <md-card fxFlex="100%" class="margin">
       <md-card-header>
         <div md-card-avatar class="star-header"></div>

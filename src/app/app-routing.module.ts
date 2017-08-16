@@ -6,6 +6,8 @@ import { LearnComponent }         from "./pages/learn.component";
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },
+
+  /*init LearnComponent code-by-colors #28003E*/
   { path: 'learn', component: LearnComponent },
 ];
 

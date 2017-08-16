@@ -3,13 +3,11 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Data } from '../models/data';
-
 
 @Injectable()
 export class DataService {
   private dataURL = 'https://hs-mw-backend.eu-gb.mybluemix.net/api/query';  // URL to web api
-  // private dataURL = 'http://localhost:6006/api/query';
+  // private dataURL = 'http://localhost:6000/api/query';
 
   constructor(private http: Http) { }
 

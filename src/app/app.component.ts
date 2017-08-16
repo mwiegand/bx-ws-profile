@@ -13,6 +13,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.routeLinks = [
       {label: 'Profile', link: ''},
+      /*init LearnComponent code-by-colors #28003E*/
       {label: 'Learn', link: 'learn'}];
     router.events.subscribe((event) => {
       if(event instanceof NavigationEnd){

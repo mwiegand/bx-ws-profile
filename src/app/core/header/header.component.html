@@ -1,4 +1,5 @@
 <md-toolbar class="mat-elevation-z6 sticky" color="primary">
+  <!--init own App code-by-color #76C8FF-->
   <span class="title ">MW</span>
   <nav md-tab-nav-bar aria-label="navigation links">
     <a md-tab-link
@@ -9,17 +10,11 @@
       {{routeLink.label}}
     </a>
   </nav>
-  <!--<a md-button routerLink="/" routerLinkActive="active">Profile</a>
-    <a md-button routerLink="/learn" routerLinkActive="active">Learn</a>-->
   <span class="example-spacer "></span>
   <button md-button class="" [mdMenuTriggerFor]="appMenu">
     <md-icon>menu</md-icon>
     Menu
   </button>
-
-  <!-- #34a4d7 -->
-
-
 </md-toolbar>
 
 <md-menu #appMenu="mdMenu">

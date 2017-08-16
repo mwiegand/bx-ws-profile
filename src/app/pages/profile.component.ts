@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-import { Data } from '../shared/models/data';
-
-
 @Component({
   selector: 'my-profile',
   templateUrl: './profile.component.html',
@@ -11,11 +8,7 @@ import { Data } from '../shared/models/data';
 
 export class ProfileComponent {
 
-  datas: Data[] = [];
-
-
-  myData: Array<any>;
-
+  /*adds education code-by-color #140956*/
   schools = [
     {
       name: 'Generic School',
@@ -33,6 +26,8 @@ export class ProfileComponent {
       end: new Date(),
     }
   ];
+
+  /*adds jobs code-by-color #140956*/
   works = [
     {
       name: 'Generic Internship',
@@ -53,6 +48,8 @@ export class ProfileComponent {
       end: new Date(),
     }
   ];
+
+  /*adds skills code-by-color #1BA3FF*/
   skills = [
     {
       name: 'Problem Solving',

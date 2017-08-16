@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ng4Material</title>
+  <!--init own App code-by-color #76C8FF-->
+  <title>MW Profile</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +15,7 @@
       text-align: center;
       position: fixed;
       /* center the element */
-      top:20%;
+      top: 20%;
       right: 0;
       left: 0;
       margin-right: auto;
@@ -23,18 +24,27 @@
       min-height: 10em;
       width: 90%;
     }
+
     .profile-loader img {
-      max-width:200px
+      max-width: 200px
     }
+
     @keyframes pulse_animation {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.5); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
+
     .pulse {
       animation-name: pulse_animation;
       animation-duration: 1000ms;
-      transform-origin:center bottom;
+      transform-origin: center bottom;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
@@ -48,3 +58,4 @@
 </app-root>
 </body>
 </html>
+<!-- AB1A86-->
