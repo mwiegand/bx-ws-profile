@@ -7,6 +7,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataService {
   private dataURL = 'https://hs-mw-backend.eu-gb.mybluemix.net/api/query';  // URL to web api
+  // private dataURL = 'https://'+'<your_discovery_backend>'+'.mybluemix.net/api/query';  // URL to web api
   // private dataURL = 'http://localhost:6000/api/query';
 
   constructor(private http: Http) { }

@@ -3,6 +3,6 @@ applications:
   instances: 2
   buildpack: staticfile_buildpack
   # defines appname code-by-color #FFFFFF
-  name: hs-mw-profile
-  host: hs-mw-profile
+  name: bx-xy-profile
+  host: bx-xy-profile
   domain: mybluemix.net
