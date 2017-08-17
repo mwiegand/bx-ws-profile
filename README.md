@@ -9,6 +9,27 @@ Hierfür wurde diese fertige Anwendung in kleine Teile zerlegt und kann per "cod
 
 Als erstes müssen einige allgemeine Einstellungen für Bluemix vorgenommen werden, dass die Anwendung über eine eindeutige Web-URL erreichbar ist. Darauf folgen Personalisierungen der eigenen Anwendung, die eigene Internetpräsens mit der Profil-Seite und die Anbindung des Backends mit dem Watson Discovery Service. Das Backend muss befindet sich in diesem Repository und sollte zuerst erstellt werden, bevor die Learn-Seite zusammen gebaut wird.
 
+## build stage
+
+```bash
+#!/bin/bash
+export NVM_DIR=/home/pipeline/nvm
+export NODE_VERSION=7.9.0
+export NVM_VERSION=0.33.2
+
+npm config delete prefix \
+  && curl https://raw.githubusercontent.com/creationix/nvm/v${NVM_VERSION}/install.sh | sh \
+  && . $NVM_DIR/nvm.sh \
+  && nvm install $NODE_VERSION \
+  && nvm alias default $NODE_VERSION \
+  && nvm use default \
+  && node -v \
+  && npm -v
+
+npm install
+
+npm run dist
+```
 
 - - - -
 
