@@ -31,6 +31,17 @@ npm install
 npm run dist
 ```
 
+## Deploy Stage
+
+```bash
+#!/bin/bash
+cd dist
+cf push "${CF_APP}"
+
+# View logs
+# cf logs "${CF_APP}" --recent
+```
+
 - - - -
 
 
