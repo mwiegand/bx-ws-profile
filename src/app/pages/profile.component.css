@@ -10,8 +10,12 @@
 }
 
 .skill {
-  margin-right: 2em;
-  white-space: nowrap
+  margin-right: 1em;
+  margin-left: 1em;
+  white-space: nowrap;
+  min-width: 250px;
+  max-width: 600px;
+  flex: 1;
 }
 
 .poster {
@@ -21,12 +25,17 @@
 
 .profile {
   box-shadow: 0 0 12px 0 #888888;
-  margin: 1em;
+  margin-bottom: 1em;
   max-width:200px;
 }
 
 .mat-list-icon {
   color: rgba(0, 0, 0, 0.54);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 600px) {
@@ -35,5 +44,16 @@
     position: sticky;
     z-index: 1;
     top: 78px;
+  }
+}
+
+
+@media (max-width: 350px) {
+  .skill {
+    flex-direction: column !important;
+    border-bottom: solid #cecece 1px;
+    margin-bottom: 2em;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
