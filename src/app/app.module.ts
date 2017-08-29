@@ -3,7 +3,8 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule,
-  MdTabsModule, MdSliderModule, MdListModule, MdInputModule, MdProgressSpinnerModule, MdChipsModule, MdTooltipModule
+  MdTabsModule, MdSliderModule, MdListModule, MdInputModule, MdProgressSpinnerModule, MdChipsModule, MdTooltipModule,
+  MdSnackBarModule,
 } from '@angular/material';
 import 'hammerjs';
 
@@ -34,6 +35,7 @@ import {DataService} from "./shared/services/data.service";
     MdIconModule,
     MdSliderModule,
     AppRoutingModule,
+    MdSnackBarModule,
     FlexLayoutModule,
     MdChipsModule,
     MdTooltipModule,
