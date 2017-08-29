@@ -27,6 +27,12 @@ export class LearnComponent implements OnInit {
     this.snackBar.open('server not responding', 'hide');
   }
 
+  showEmptyBar(requestString:string): void {
+    this.snackBar.open('no matches for: "'+requestString+'"', 'hide', {
+      duration:2000,
+    });
+  }
+
    checkCleanHTML(html: string): boolean {
      // check highlight paragraphs in document
      let xss = new RegExp("<(?!br\/>|mark>|\/|p>|em>)");
@@ -67,13 +73,15 @@ export class LearnComponent implements OnInit {
       this.discoverySpinner = true;
       console.log(requestString);
       this.dataService.query(requestString).then(data => {
-        console.log(data);
-        data.results.forEach(result => {
-          result = this.injectHighlights(result);
-        });
-        // show results in frontend
         this.discoverySpinner = false;
-        this.results = data.results;
+        console.log(data);
+        if(data.results.length) {
+          data.results.forEach(result => {
+            result = this.injectHighlights(result);
+          });
+          // show results in frontend
+          this.results = data.results;
+        } else this.showEmptyBar(requestString);
       }).catch(err => {
         this.discoverySpinner = false;
         this.showErrBar();
