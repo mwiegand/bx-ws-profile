@@ -8,7 +8,7 @@ body {
 
 md-toolbar * .mat-tab-links .mat-ink-bar {
   height: 4px !important;
-  background-color:rgba(250,250,250,1);
+  background-color:rgba(250,250,250,1) !important;
   opacity: .98;
   /*filter: hue-rotate(30deg) brightness(100%);*/
 }
