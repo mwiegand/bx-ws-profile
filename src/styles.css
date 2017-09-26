@@ -1,44 +1,52 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
   padding-top: 70px;
+  background-color: whitesmoke ;
   margin :0;
-  background-color: rgb(250, 250, 250);
 }
 
+/*
+* Link NavBar Styling
+*/
 md-toolbar * .mat-tab-links .mat-ink-bar {
   height: 4px !important;
+  /*
+  To get a white Link-Bar if md-toolbar has color=primary
   background-color:rgba(250,250,250,1) !important;
   opacity: .98;
-  /*filter: hue-rotate(30deg) brightness(100%);*/
+  */
 }
-
 md-toolbar * nav.mat-tab-nav-bar, nav.mat-tab-nav-bar > div {
   height: 100% !important;
 }
-
 md-toolbar * .mat-tab-link {
   line-height: 64px !important;
+  color: inherit !important;
   height: 64px !important;
 }
 
-md-toolbar * .mat-tab-label, .mat-tab-link {
-  color: rgba(255,255,255,.99);
-}
-
+/*
+* Margin for harmonous space between elements
+*/
 .margin {
   margin: 4px;
 }
 
+/*
+* responsive Text-Wrap for paragraphs and other text-elements
+*/
 .text-wrap {
   white-space: normal !important;
 }
 
+/*
+* Styling for hichlights in Discovery Response
+*/
 .highlight {
   text-decoration: underline !important;
   font-style: italic !important;
 }
-
 em {
   font-style: normal !important;
   font-weight: bold !important;
