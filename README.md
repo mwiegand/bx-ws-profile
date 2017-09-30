@@ -2,16 +2,52 @@
 
 Diese Anwendung wurde für einen Bluemix Workshop erstellt.
 
+## Idee zur App
+
+Ziel der Anwendung ist es einerseits sich selbst auf einer Website zu präsentieren und andererseits eine intelligente Suche mit Watson Discovery zu bieten.
+In der intelligenten Suche können sämtliche Dokumente wie PDFs, Word Dateien und HTML Seiten hochgeladen werden. Wichtig dabei ist, dass die Dokumente einzelne Kapitel enthalten.
+
+### Funktionen der App
+
+Die App bietet 3 Funktionen:
+
+- Profil des Studenten visualisieren
+- Anfragen an die Daten aus dem Watson Discovery Service visualisieren
+- Automatisch beim ersten Starten der Anwendung die Dokumente in den Watson Discovery Service hochladen
+
+![App functionalities](./sample-learning_720.jpg)
+
+### Archtitektur
+
 Die Anwendung basiert auf Angular4 und einem [NodeJS Backend](https://github.com/mwiegand/bx-ws-learning) der die Anbindung zum Watson Discovery Service erstellt.
 
-[https://github.com/mwiegand/bx-ws-learning](https://github.com/mwiegand/bx-ws-learning)
+Architektur:
+
+![App architecture](./sample-learning-02_480.jpg)
+
+Das Backend findet sich hier: [https://github.com/mwiegand/bx-ws-learning](https://github.com/mwiegand/bx-ws-learning)
+
+## Anleitung
 
 Im Rahmen dieses Workshops wird die Anwendung Schritt für Schritt zusammen gebaut und demonstriert wie ein Web-Entwickler Bluemix bedient, um eine WebApp zu bauen.
-Hierfür wurde diese fertige Anwendung in kleine Teile zerlegt und kann per "code-by-color" (in Anlehnung an "Malen nach Zahlen") wieder zusammen gesetzt werden kann.
+Dafür ist die Anleitung in folgende Schritte aufgeteilt:
 
-Als erstes müssen ein paar allgemeine Einstellungen für Bluemix vorgenommen werden, dass die Anwendung über eine eindeutige Web-URL erreichbar ist. Darauf folgen Personalisierungen der eigenen Anwendung, die eigene Internetpräsens mit der Profil-Seite und die Anbindung des Backends mit dem Watson Discovery Service. Das Backend muss befindet sich in diesem Repository und sollte zuerst erstellt werden, bevor die Learn-Seite zusammen gebaut wird.
++ Toolchain erstellen
++ Delivery Pipeline konfigurieren
++ Anwendung anpassen (code by color)
+  + A. Profile (Anwendung personalisieren)
+  + B. Learn (Anbindung an das Backend)
 
-## Build stage
+Die Anwendung besitzt im Quellcode Kommentare, die zu den Beschreibungen in dieser Anleitung passen. Diese sind mit dem Hex-Werten von Farben gekennzeichnet und die Beschreibungen haben Dateiangaben (`sr/index`) mit der entsprechenden Zeile (`:5`) in der Datei: `src/index.html:5`
+
+
+## Toolchain erstellen
+Also bevor mit dem Entwickeln angefangen werden kann, muss eine Toolchain mit Git-Repository auf Bluemix erstellt werden.
+Zum Erstellen einer Toolchain muss in Bluemix in die Region "US-South" [Vereinigte Staaten (Süden)] gewechselt werden und in dem linken Menü unter `Services > DevOps > Toolchain` eine neue Toolchain erstellt werden
+
+## Delivery Pipeline konfigurieren
+
+### Build stage
 
 ```bash
 #!/bin/bash
@@ -33,7 +69,7 @@ npm install
 npm run dist
 ```
 
-## Deploy Stage
+### Deploy Stage
 
 ```bash
 #!/bin/bash
@@ -46,19 +82,9 @@ cf push "${CF_APP}"
 
 - - - -
 
+## Anwendung anpassen (code by color)
 
-#### 1. defines appname code-by-color ![#FFFFFF](https://placehold.it/15/FAFAFA/000000?text=+) `#FFFFFF`
-"xy" durch eigenen Initialien ersetzen
-- `src/static/manifest.yml:5`
-```yml
-name: bx-xy-profile
-host: bx-xy-profile
-domain: mybluemix.net
-```
-- - - -
-
-
-#### 2. init own App code-by-color  ![#76C8FF](https://placehold.it/15/76C8FF/000000?text=+) `#76C8FF`
+#### 1. init own App code-by-color  ![#76C8FF](https://placehold.it/15/76C8FF/000000?text=+) `#76C8FF`
 "XY" durch eigenen Initialien ersetzen
 - `src/index.html:5`
 ```html
@@ -247,7 +273,7 @@ skills = [
 
 - - - -
 
-## B. Learn ![#7F1C7D](https://placehold.it/15/7F1C7D/000000?text=+) ![#AB1A86](https://placehold.it/15/AB1A86/000000?text=+) ![#3B0256](https://placehold.it/15/3B0256/000000?text=+)
+## B. Learn ![#7F1C7D](https://placehold.it/15/7F1C7D/000000?text=+)
 
 
 #### 1. init DataService code-by-color ![#7F1C7D](https://placehold.it/15/7F1C7D/000000?text=+) `7F1C7D`
